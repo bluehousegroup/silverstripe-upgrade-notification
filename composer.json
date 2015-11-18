@@ -1,0 +1,18 @@
+{
+        "name": "bluehousegroup/silverstripe-upgrade-notification",
+        "description": "A module to alert when a newer version of SilverStripe is available",
+        "type": "silverstripe-module",
+        "keywords": ["silverstripe", "upgrade"],
+        "license": "BSD-3-Clause",
+        "authors": [
+                {
+                        "name": "Andrew Rousseau",
+                        "email": "andrew@bluehousegroup.com"
+                }
+        ],
+        "require":
+        {
+                "silverstripe/framework": "~3.0",
+                "silverstripe/cms": "~3.0"
+        }
+}

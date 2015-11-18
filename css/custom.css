@@ -1,0 +1,28 @@
+.icon.icon-16.icon-upgrade-notification-alert { 
+	width: 16px; 
+	height: 16px; 
+	background: url('../images/warning-16.png'); 
+}
+.icon.icon-24.icon-upgrade-notification-alert { 
+	width: 24px; 
+	height: 24px; 
+	background: url('../images/warning-24.png'); 
+}
+.icon.icon-16.icon-upgrade-notification-success { 
+	width: 16px; 
+	height: 16px; 
+	background: url('../images/success-16.png'); 
+}
+.icon.icon-24.icon-upgrade-notification-success { 
+	width: 24px; 
+	height: 24px; 
+	background: url('../images/success-24.png'); 
+}
+
+.cms-menu-list li#Menu-upgrade-notification-success a {
+	color: #166A24;
+}
+
+.cms-menu-list li#Menu-upgrade-notification-alert a {
+	color: #D23F3D;
+}
