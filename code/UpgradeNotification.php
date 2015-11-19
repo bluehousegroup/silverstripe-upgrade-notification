@@ -67,20 +67,20 @@ class UpgradeNotification extends DataExtension
 		return $upgrade_message;
 	}
 
-	public static function getCode()
+	public static function getIcon()
 	{
 		$upgrade_notification = new UpgradeNotification();
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
 		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
 
-		$code = 'upgrade-notification-alert';
+		$code = '/silverstripe-upgrade-notification/images/warning-16.png';
 		//Compare and sete whether version is current or not
 		if($silverstripe_version && $silverstripe_latest_version)
 		{
 			if($silverstripe_version < $silverstripe_latest_version)
-				$code = 'upgrade-notification-alert';
+				$code = '/silverstripe-upgrade-notification/images/warning-16.png';
 			else
-				$code = 'upgrade-notification-success';
+				$code = '/silverstripe-upgrade-notification/images/success-16.png';
 		}
 
 		return $code;
