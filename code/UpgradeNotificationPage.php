@@ -15,9 +15,10 @@ class UpgradeNotificationPage extends LeftAndMain {
 	}
 
 	public function getEditForm($id = null, $fields = null) {
+		$upgrade_notification = new UpgradeNotification();
 
 		$fields = new FieldList();
-		$fields->push(new LiteralField("Versions",'<div class="ss-upgrade-content"><h2>Installed Version: '. UpgradeMenuTitle .'</h2><h2>Latest Version: '. UpgradeMenuTitle .'</h2></div>'));
+		$fields->push(new LiteralField("Versions",'<div class="ss-upgrade-content"><h2>Installed Version: '. $upgrade_notification->getInstalledVersion() .'</h2><h2>Latest Version: '. $upgrade_notification->getLatestVersion() .'</h2></div>'));
 		if(UpgradeNotification::isCurrentVersion())
 			$fields->push(new LiteralField("Message",'<div class="message success ss-upgrade-content"><p>Your SilverStripe is up to date.</p></div>'));
 		else
