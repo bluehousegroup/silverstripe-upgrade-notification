@@ -24,6 +24,8 @@ class UpgradeNotification extends DataExtension
 				}
 			}
 		}
+		//uncomment and set to latest version to test success
+		//$this->silverstripe_version = '3.2.1';
 
 		return $this->silverstripe_version;
 	}
@@ -61,7 +63,7 @@ class UpgradeNotification extends DataExtension
 			if($silverstripe_version < $silverstripe_latest_version)
 				$upgrade_message = 'SilverStripe ' . $silverstripe_version . ' (' . $silverstripe_latest_version . ')';
 			else
-				$upgrade_message = 'SilverStripe ' . $silverstripe_version . ' (up-to-date)';
+				$upgrade_message = 'SilverStripe ' . $silverstripe_version . ' (current)';
 		}
 
 		return $upgrade_message;
@@ -84,5 +86,22 @@ class UpgradeNotification extends DataExtension
 		}
 
 		return $code;
+	}
+
+	public static function isCurrentVersion()
+	{
+		$upgrade_notification = new UpgradeNotification();
+		$silverstripe_version = $upgrade_notification->getInstalledVersion();
+		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
+
+		if($silverstripe_version && $silverstripe_latest_version)
+		{
+			if($silverstripe_version < $silverstripe_latest_version)
+				return false;
+			else
+				return true;
+		}
+
+		return false;
 	}
 }
