@@ -7,7 +7,7 @@ class UpgradeNotification extends DataExtension
 
 	public function getInstalledVersion()
 	{
-		//Parse out the installed version from composer.lock
+		// Parse out the installed version from composer.lock
 		if(!$this->silverstripe_version)
 		{
 			if(file_exists(__DIR__ . '/../../composer.lock'))
@@ -30,7 +30,7 @@ class UpgradeNotification extends DataExtension
 
 	public function getLatestVersion()
 	{
-		//Parse out latest version from packagist feed
+		// Parse out latest version from packagist feed
 		if(!$this->silverstripe_latest_version)
 		{
 			$package_feed = file_get_contents('https://packagist.org/feeds/package.silverstripe/framework.rss');
@@ -55,7 +55,7 @@ class UpgradeNotification extends DataExtension
 		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
 
 		$upgrade_message = 'SilverStripe Version: unknown';
-		//Compare and sete whether version is current or not
+		// Compare and sete whether version is current or not
 		if($silverstripe_version && $silverstripe_latest_version)
 		{
 			if($silverstripe_version < $silverstripe_latest_version)
@@ -73,14 +73,14 @@ class UpgradeNotification extends DataExtension
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
 		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
 
-		$code = '/silverstripe-upgrade-notification/images/warning-16.png';
-		//Compare and sete whether version is current or not
+		$code = UPGRADE_NOTE_DIR . '/images/warning-16.png';
+		// Compare and set whether version is current or not
 		if($silverstripe_version && $silverstripe_latest_version)
 		{
 			if($silverstripe_version < $silverstripe_latest_version)
-				$code = '/silverstripe-upgrade-notification/images/warning-16.png';
+				$code = UPGRADE_NOTE_DIR . '/images/warning-16.png';
 			else
-				$code = '/silverstripe-upgrade-notification/images/success-16.png';
+				$code = UPGRADE_NOTE_DIR . '/images/success-16.png';
 		}
 
 		return $code;
