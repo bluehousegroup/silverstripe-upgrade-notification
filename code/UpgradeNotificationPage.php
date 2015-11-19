@@ -1,6 +1,6 @@
 <?php
 
-class UpgradeNotificationPage extends LeftAndMain {
+class UpgradeNotificationPage extends CMSMain {
 
 	static $url_segment = "upgrade";
 	static $menu_title = UpgradeMenuTitle;
