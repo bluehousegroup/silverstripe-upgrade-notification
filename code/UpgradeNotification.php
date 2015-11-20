@@ -4,6 +4,7 @@ class UpgradeNotification extends DataExtension
 {
 	protected $silverstripe_version = null;
 	protected $silverstripe_latest_version = null;
+	protected $version_time_stamp = null;
 
 	public function getInstalledVersion()
 	{
@@ -25,7 +26,7 @@ class UpgradeNotification extends DataExtension
 			}
 		}
 		//uncomment and set to latest version to test success
-		//$this->silverstripe_version = '3.2.1';
+		$this->silverstripe_version = '3.2.1';
 
 		return $this->silverstripe_version;
 	}
@@ -48,6 +49,17 @@ class UpgradeNotification extends DataExtension
 		}
 
 		return $this->silverstripe_latest_version;
+	}
+
+	public function getVersionTimeStamp()
+	{
+		// Parse out latest version from packagist feed
+		if(!$this->version_time_stamp)
+		{
+			$this->version_time_stamp = date('Y-m-d h:i:s');
+		}
+
+		return $this->version_time_stamp;
 	}
 
 	public static function getUpgradeMessage()
@@ -88,7 +100,7 @@ class UpgradeNotification extends DataExtension
 		return $code;
 	}
 
-	public static function isCurrentVersion()
+	public function isCurrentVersion()
 	{
 		$upgrade_notification = new UpgradeNotification();
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
