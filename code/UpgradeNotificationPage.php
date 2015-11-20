@@ -16,6 +16,7 @@ class UpgradeNotificationPage extends LeftAndMain {
 
 	public function getEditForm($id = null, $fields = null) {
 		$upgrade_notification = new UpgradeNotification();
+		$config = SiteConfig::current_site_config(); 
 
 		$fields = new FieldList();
 		$fields->push(new LiteralField("Versions",'<div class="ss-upgrade-content"><h2>Installed Version: '. $upgrade_notification->getInstalledVersion() .'</h2><h2>Latest Version: '. $upgrade_notification->getLatestVersion() .'</h2></div>'));
@@ -27,7 +28,7 @@ class UpgradeNotificationPage extends LeftAndMain {
 		if($upgrade_notification->isCurrentVersion())
 			$fields->push(new LiteralField("Content",'<div class="ss-upgrade-content"><p>Congratulations, you are on the most current version of SilverStripe! Woohoo!</p></div>'));
 		else
-			$fields->push(new LiteralField("Content",'<div class="ss-upgrade-content"><p>Website maintenance is essential, but often neglected. Don&#39;t leave your website vulnerable to security issues or let your team lose efficiency by missing out on new software features. Contact your development team today to schedule an upgrade.</p></div>'));
+			$fields->push(new LiteralField("Content",'<div class="ss-upgrade-content"><p>Website maintenance is essential, but often neglected. Don&#39;t leave your website vulnerable to security issues or let your team lose efficiency by missing out on new software features. Contact your development team today to schedule an upgrade <a href="mailto:'.$config->TechnicalContactEmail.'?Subject=Upgrade%SilverStripe" target="_top">'.$config->TechnicalContactEmail.'</a>.</p></div>'));
 
 		$actions = new FieldList();
 		$form = new Form($this, "EditForm", $fields, $actions);

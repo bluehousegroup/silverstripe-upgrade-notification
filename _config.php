@@ -1,6 +1,7 @@
 <?php
 
 LeftAndMain::require_css(basename(__DIR__) . '/css/custom.css');
+Object::add_extension('SiteConfig','SiteConfigUpgradeNotification');
 
 define('UPGRADE_NOTE_DIR',basename(dirname(__FILE__)));
 
