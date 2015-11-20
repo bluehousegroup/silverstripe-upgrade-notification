@@ -6,7 +6,7 @@ class UpgradeNotificationPage extends LeftAndMain {
 	static $menu_title = UpgradeMenuTitle;
 	static $menu_icon = UpgradeMenuIcon;
 	static $menu_priority = 1000;
-	static $allowed_actions = array ('upgrade');
+	static $allowed_actions = array ('upgrade', 'refresh');
 
 	public function init() {
 		parent::init();
@@ -23,7 +23,7 @@ class UpgradeNotificationPage extends LeftAndMain {
 			$fields->push(new LiteralField("Message",'<div class="message good ss-upgrade-content"><p>Your SilverStripe is up to date.</p></div>'));
 		else
 			$fields->push(new LiteralField("Message",'<div class="message notice ss-upgrade-content"><p>Your SilverStripe is out of date.</p></div>'));
-		$fields->push(new LiteralField("Status",'<div class="ss-upgrade-content"><p>Last checked: ' . date('F d, Y', strtotime($upgrade_notification->getVersionTimeStamp())) . '. <button id="ss-version-check" class="ss-ui-button" type="button">Check again</button></p></div>'));
+		$fields->push(new LiteralField("Status",'<div class="ss-upgrade-content"><p>Last checked: ' . date('F d, Y g:ia', strtotime($upgrade_notification->getVersionTimeStamp())) . '. <a href="admin/upgrade/refresh/" id="ss-version-check" class="ss-ui-button">Check again</a></p></div>'));
 		if($upgrade_notification->isCurrentVersion())
 			$fields->push(new LiteralField("Content",'<div class="ss-upgrade-content"><p>Congratulations, you are on the most current version of SilverStripe! Woohoo!</p></div>'));
 		else
