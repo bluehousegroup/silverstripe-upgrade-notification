@@ -10,8 +10,10 @@ class UpgradeNotification extends DataExtension
 	function __construct() {
 		parent::__construct();
 		$slug_parts = explode('/', $_SERVER['REQUEST_URI']);
-		if($slug_parts[1] == 'admin' && $slug_parts[2] == 'upgrade' && $slug_parts[3] == 'refresh')
-			$this->refresh = true;
+		if(count($slug_parts) > 3){
+			if($slug_parts[1] == 'admin' && $slug_parts[2] == 'upgrade' && $slug_parts[3] == 'refresh')
+				$this->refresh = true;
+		}
 	}
 
 	public function getInstalledVersion()
@@ -124,16 +126,33 @@ class UpgradeNotification extends DataExtension
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
 		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
 
-		$code = UPGRADE_NOTE_DIR . '/images/warning-16.png';
+		$code = 'silverstripe-upgrade-notification/images/warning-16.png';
 		// Compare and set whether version is current or not
 		if($silverstripe_version && $silverstripe_latest_version)
 		{
 			if($silverstripe_version < $silverstripe_latest_version)
-				$code = UPGRADE_NOTE_DIR . '/images/warning-16.png';
+				$code = 'silverstripe-upgrade-notification/images/warning-16.png';
 			else
-				$code = UPGRADE_NOTE_DIR . '/images/success-16.png';
+				$code = 'silverstripe-upgrade-notification/images/success-16.png';
 		}
 
+		return $code;
+	}
+
+	public static function getCode()
+	{
+		$upgrade_notification = new UpgradeNotification();
+		$silverstripe_version = $upgrade_notification->getInstalledVersion();
+		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
+		$code = 'upgrade-notification-alert';
+		//Compare and sete whether version is current or not
+		if($silverstripe_version && $silverstripe_latest_version)
+		{
+			if($silverstripe_version < $silverstripe_latest_version)
+				$code = 'upgrade-notification-alert';
+			else
+				$code = 'upgrade-notification-success';
+		}
 		return $code;
 	}
 

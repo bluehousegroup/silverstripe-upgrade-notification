@@ -3,15 +3,15 @@
 class UpgradeNotificationPage extends LeftAndMain {
 
 	static $url_segment = "upgrade";
-	static $menu_title = UpgradeMenuTitle;
-	static $menu_icon = UpgradeMenuIcon;
+	static $menu_title = '';
+	static $menu_icon = '';
 	static $menu_priority = 1000;
 	static $allowed_actions = array ('upgrade', 'refresh');
 
 	public function init() {
 		parent::init();
-		Requirements::css(UPGRADE_NOTE_DIR . '/css/custom.css');
-		Requirements::javascript(UPGRADE_NOTE_DIR . '/javascript/custom.js');
+		Requirements::css('silverstripe-upgrade-notification/css/custom.css');
+		Requirements::javascript('silverstripe-upgrade-notification/javascript/custom.js');
 	}
 
 	public function getEditForm($id = null, $fields = null) {

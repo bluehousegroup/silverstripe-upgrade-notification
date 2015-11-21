@@ -3,8 +3,9 @@
 LeftAndMain::require_css(basename(__DIR__) . '/css/custom.css');
 Object::add_extension('SiteConfig','SiteConfigUpgradeNotification');
 
-define('UPGRADE_NOTE_DIR',basename(dirname(__FILE__)));
+CMSMenu::remove_menu_item('UpgradeNotificationPage'); 
 
-// Define a constant so we can dynamically set menu title
-define('UpgradeMenuTitle', UpgradeNotification::getUpgradeMessage());
-define('UpgradeMenuIcon', UpgradeNotification::getIcon());
+$menuTitle = UpgradeNotification::getUpgradeMessage();
+$code = UpgradeNotification::getCode();
+
+CMSMenu::add_menu_item($code, $menuTitle, 'admin/upgrade/', null, 1000);
