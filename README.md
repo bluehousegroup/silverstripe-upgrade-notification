@@ -18,3 +18,4 @@ A module to alert when a newer version of SilverStripe is available
  - Add a technical contact email in the Settings tab
 
 ![Screenshot](https://github.com/bluehousegroup/silverstripe-upgrade-notification/blob/master/images/ScreenShot3.png)
+
