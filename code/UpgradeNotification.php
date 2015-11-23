@@ -93,8 +93,8 @@ class UpgradeNotification extends DataExtension
 			// Parse out latest version from packagist feed
 			if(!$this->version_time_stamp)
 			{
-				$this->version_time_stamp = date('Y-m-d h:i:s');
-				Session::set('version_time_stamp', date('Y-m-d h:i:s'));
+				$this->version_time_stamp = date('Y-m-d H:i:s');
+				Session::set('version_time_stamp', $this->version_time_stamp);
 			}
 		}
 		else
