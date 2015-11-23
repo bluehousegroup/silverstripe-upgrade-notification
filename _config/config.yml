@@ -1,3 +1,12 @@
 DataObject:
   extensions:
     - UpgradeNotification
+UpgradeNotificationPage:
+  TechnicalContactEmail: 
+  ActionMessageUpToDate: "Congratulations, you are on the most current version of SilverStripe! Woohoo!"
+  ActionMessageOutOfDate: "Web maintenance is essential to keeping your site performance optimized and secure for you and your visitors. Given the custom features of your site, we would suggest contacting your account manager to discuss what an upgrade will entail"
+  CustomMenuTextUpToDate: 
+  CustomMenuTextOutToDate: 
+  UpToDateMessage: "Your SilverStripe is up to date."
+  OutToDateMessage: "Your SilverStripe is out of date." 
+  ShowMenuItemWhenCurrent: true

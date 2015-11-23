@@ -50,6 +50,10 @@ class UpgradeNotification extends DataExtension
 		//$this->silverstripe_version = '3.2.1';
 
 		return $this->silverstripe_version;
+
+		// //Alterntive method to use built in detection
+		// $LeftAndMain = new LeftAndMain();
+		// return $LeftAndMain->CMSVersion();
 	}
 
 	public function getLatestVersion()
@@ -101,9 +105,10 @@ class UpgradeNotification extends DataExtension
 		return $this->version_time_stamp;
 	}
 
-	public static function getUpgradeMessage()
+	public function getUpgradeMessage()
 	{
 		$upgrade_notification = new UpgradeNotification();
+		$upgrade_notification_page = new UpgradeNotificationPage();
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
 		$silverstripe_latest_version = $upgrade_notification->getLatestVersion();
 
@@ -112,15 +117,15 @@ class UpgradeNotification extends DataExtension
 		if($silverstripe_version && $silverstripe_latest_version)
 		{
 			if($silverstripe_version < $silverstripe_latest_version)
-				$upgrade_message = 'SilverStripe ' . $silverstripe_version . ' (' . $silverstripe_latest_version . ')';
+				$upgrade_message = ($upgrade_notification_page->config()->CustomMenuTextOutToDate) ? $upgrade_notification_page->config()->CustomMenuTextOutToDate:'SilverStripe ' . $silverstripe_version . ' (' . $silverstripe_latest_version . ')';
 			else
-				$upgrade_message = 'SilverStripe ' . $silverstripe_version . ' (current)';
+				$upgrade_message = ($upgrade_notification_page->config()->CustomMenuTextUpToDate) ? $upgrade_notification_page->config()->CustomMenuTextUpToDate:'SilverStripe ' . $silverstripe_version . ' (current)';
 		}
 
 		return $upgrade_message;
 	}
 
-	public static function getIcon()
+	public function getIcon()
 	{
 		$upgrade_notification = new UpgradeNotification();
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
@@ -139,7 +144,7 @@ class UpgradeNotification extends DataExtension
 		return $code;
 	}
 
-	public static function getCode()
+	public function getCode()
 	{
 		$upgrade_notification = new UpgradeNotification();
 		$silverstripe_version = $upgrade_notification->getInstalledVersion();
