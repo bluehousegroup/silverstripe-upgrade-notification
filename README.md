@@ -15,8 +15,9 @@ A module to alert when a newer version of SilverStripe is available
  - example.com/dev/build
  - example.com/?flush=all
  - example.com/admin?flush=all
- - add any of the following config variables to your mysite/_config/config.yml file
+ - to customize add any of the following config variables to your mysite/_config/config.yml file
 
+```	
 	UpgradeNotificationPage:
 		TechnicalContactEmail: 
 		ActionMessageUpToDate: "Congratulations, you are on the most current version of SilverStripe! Woohoo!"
@@ -26,3 +27,4 @@ A module to alert when a newer version of SilverStripe is available
 		UpToDateMessage: "Your SilverStripe is up to date."
 		OutToDateMessage: "Your SilverStripe is out of date." 
 		ShowMenuItemWhenCurrent: true
+```
