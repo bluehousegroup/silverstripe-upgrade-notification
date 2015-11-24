@@ -1,6 +1,3 @@
-DataObject:
-  extensions:
-    - UpgradeNotification
 UpgradeNotificationPage:
   TechnicalContactEmail: 
   ActionMessageUpToDate: "Congratulations, you are on the most current version of SilverStripe! Woohoo!"
