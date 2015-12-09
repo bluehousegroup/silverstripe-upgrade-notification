@@ -7,3 +7,6 @@ UpgradeNotificationPage:
   UpToDateMessage: "Your SilverStripe is up to date."
   OutToDateMessage: "Your SilverStripe is out of date." 
   ShowMenuItemWhenCurrent: true
+LeftAndMain:
+  extensions:
+    - UpgradeNotificationLeftAndMainExtension
