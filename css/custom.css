@@ -1,25 +1,13 @@
-#Menu-Menu-upgrade-notification-alert {
-	border-top:1px solid #03090c;
-}
-
 #Menu-upgrade-notification-alert a {
-	background-color: #00111d;
+	background-color: #142136;
 	background-image: none;
-	background-size: 100%;
 	border-top:1px solid #19435c;
-	color:#fff;
-	text-shadow:#003050 1px 1px 0;
+	color:#eee;
+	text-shadow:none;
 }
 
-#Menu-upgrade-notification-alert a:hover, #Menu-upgrade-notification-alert a {
-	background-color: #00111d;
-	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…gd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-	background-size: 100%;
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00111d), color-stop(50%, #003050), color-stop(100%, #00111d));
-	background-image: -webkit-linear-gradient(#00111d, #003050, #00111d);
-	background-image: -moz-linear-gradient(#00111d, #003050, #00111d);
-	background-image: -o-linear-gradient(#00111d, #003050, #00111d);
-	background-image: linear-gradient(#00111d, #003050, #00111d);
+#Menu-upgrade-notification-alert a:hover {
+	background-color: #142136;
 	color:#fff;
 }
 
@@ -27,28 +15,16 @@
 	opacity:1;
 }
 
-#Menu-Menu-upgrade-notification-success {
-	border-top:1px solid #03090c;
-}
-
 #Menu-upgrade-notification-success a {
-	background-color: #00111d;
+	background-color: #142136;
 	background-image: none;
-	background-size: 100%;
 	border-top:1px solid #19435c;
-	color:#fff;
-	text-shadow:#003050 1px 1px 0;
+	color:#eee;
+	text-shadow:none;
 }
 
-#Menu-upgrade-notification-success a:hover, #Menu-upgrade-notification-success a {
-	background-color: #00111d;
-	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…gd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-	background-size: 100%;
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00111d), color-stop(50%, #003050), color-stop(100%, #00111d));
-	background-image: -webkit-linear-gradient(#00111d, #003050, #00111d);
-	background-image: -moz-linear-gradient(#00111d, #003050, #00111d);
-	background-image: -o-linear-gradient(#00111d, #003050, #00111d);
-	background-image: linear-gradient(#00111d, #003050, #00111d);
+#Menu-upgrade-notification-success a:hover {
+	background-color: #142136;
 	color:#fff;
 }
 
